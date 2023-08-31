@@ -102,6 +102,25 @@ a:active {
     color: var(--main-color-active);
 }
 
+.footer {
+  background-color: #b891c7;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
 @media only screen and (max-width: 768px) {
     .nav-menu {
         position: fixed;
