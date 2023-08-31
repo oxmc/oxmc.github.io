@@ -32,6 +32,16 @@ body {
     max-height: 40vh;
 }
 
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.main_pfp-status {
+  display: flex;
+  align-items: center;
+}
+
 .main_text {
     margin: 2rem;
     padding: 0.5rem;
