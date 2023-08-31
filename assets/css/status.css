@@ -4,6 +4,7 @@
   width: 0.7rem;
   border-radius: 50%;
   display: inline-block;
+  margin-left: 10px;
 }
 
 .status.offline {
