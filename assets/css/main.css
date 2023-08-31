@@ -103,7 +103,7 @@ a:active {
 }
 
 .footer {
-  background-color: #b891c7;
+  /*background-color: #b891c7;*/
   color: white;
   text-align: center;
   padding: 10px;
@@ -113,7 +113,7 @@ a:active {
 }
 
 .footer a {
-  color: white;
+  /*color: white;*/
   text-decoration: none;
 }
 
