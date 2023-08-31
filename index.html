@@ -1,56 +1,69 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#b891c7">
-    <link rel="manifest" href="./assets/site.webmanifest">
-    <link rel="stylesheet" href="./assets/css/landing.css">
-    <link rel="stylesheet" href="./assets/css/status.css">
-    <meta name="msapplication-TileColor" content="#b891c7">
-    <meta name="theme-color" content="#b891c7">
-    <meta name="twitter:card" content="./assets/oxmc.jpeg">
-    <meta name="twitter:site" content="https://oxmc.is-a.dev">
-    <meta name="twitter:creator" content="oxmc7769_femboy">
-    <meta name="twitter:title" content="oxmc's Website!">
-    <meta name="twitter:description" content="My website for contact and projects!">
-    <meta name="twitter:image" content="https://oxmc.is-a.dev/assets/img/oxmc.jpeg">
-    <title>oxmc | About</title>
-  </head>
-  <body>
-    <script src="https://cdn.jsdelivr.net/gh/0x5841524f4e/js-lanyard/lanyard.js"></script>
-    <header class="header">
-      <nav class="navbar">
-        <a class="nav-logo nav-link-active nav-transition">oxmc</a>
-        <ul class="nav-menu">
-          <li class="nav-item">
-            <a href="./contact.html" class="nav-link nav-transition">Contact</a>
-          </li>
-        </ul>
-        <div class="hamburger">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </div>
-      </nav>
-    </header>
-    <div class="main">
-      <div class="user-info">
-        <div class="main_pfp-status">
-          <img class="main_pfp" src="./assets/img/oxmc.jpeg">
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="manifest" href="./assets/site.webmanifest">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./assets/css/landing.css">
+  <link rel="stylesheet" href="./assets/css/status.css">
+  <meta name="msapplication-TileColor" content="#b891c7">
+  <meta name="theme-color" content="#b891c7">
+  <meta name="twitter:card" content="./assets/oxmc.jpeg">
+  <meta name="twitter:site" content="https://oxmc.is-a.dev">
+  <meta name="twitter:creator" content="oxmc7769_femboy">
+  <meta name="twitter:title" content="oxmc's Website!">
+  <meta name="twitter:description" content="My website for contact and projects!">
+  <meta name="twitter:image" content="https://oxmc.is-a.dev/assets/img/oxmc.jpeg">
+  <title>oxmc | About</title>
+  <div class="loader">
+    <div class="spinner-container">
+      <div class="spinner"></div>
+      <h2>Loading page content</h2>
+    </div>
+  </div>
+  <script src="./assets/js/loading.js"></script>
+</head>
+
+<body>
+  <script src="https://cdn.jsdelivr.net/gh/0x5841524f4e/js-lanyard/lanyard.js"></script>
+  <header class="header">
+    <nav class="navbar">
+      <a class="nav-logo nav-link-active nav-transition">oxmc</a>
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="./contact.html" class="nav-link nav-transition">Contact</a>
+        </li>
+      </ul>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </nav>
+  </header>
+  <div class="main">
+    <div class="user-info">
+      <img class="main_pfp" src="./assets/img/placeholder_pfp.png" alt="My Profile Picture" id="pfp">
+      <div class="main_pfp-status">
+        <p id="Discord_Status_Text">Currently Offline</p>
+        <div class="status-dot-wrapper">
           <div id="Discord_Status" class="status offline" title="My Discord Status"></div>
-        </div>
-        <div class="main_text">
-          <h1>Welcome!</h1>
-          <h2>This site is a work in progress, please excuse any bugs!</h2>
         </div>
       </div>
     </div>
-    <div class="footer">
-      <h2>This site was designed by: <a href="https://fissionfeline.github.io/FissionFeline/">Furious Feline</a>! </h2>
+    <div class="main_text">
+      <h1>Welcome!</h1>
+      <h2>This site is a work in progress, please excuse any bugs!</h2>
     </div>
-  </body>
-  <script src="./assets/js/discord_status.js"></script>
-  <script src="./assets/js/discord_info.js"></script>
-  <script src="./assets/js/nav_bar_control.js"></script>
+  </div>
+  <div class="footer">
+    <h2>This site was designed by: <a href="https://fissionfeline.github.io/FissionFeline/">Furious Feline</a>! </h2>
+  </div>
+</body>
+<script src="./assets/js/discord_status.js"></script>
+<script src="./assets/js/discord_info.js"></script>
+<script src="./assets/js/nav_bar_control.js"></script>
+
 </html>

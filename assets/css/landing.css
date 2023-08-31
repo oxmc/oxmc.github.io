@@ -1,5 +1,7 @@
 @import url("./main.css");
+@import url("./loading.css");
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap');
+
 body {
     background-color: var(--main-bg-color);
     font-family: var(--main-font);
@@ -30,6 +32,21 @@ body {
     border-radius: 50%;
     max-width: 40vh;
     max-height: 40vh;
+}
+
+.main_pfp-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#Discord_Status_Text {
+    margin-right: 10px;
+}
+
+.status-dot-wrapper {
+    display: flex;
+    align-items: center;
 }
 
 .main_text {
