@@ -1,46 +1,52 @@
-function createProjectCard(data) {
-    const projectContainer = document.getElementById("projects");
-
-    data.forEach(project => {
-        const div = document.createElement("div");
-        div.innerHTML = `
-        <a href="${project.link}" class="card">
-          <div class="thumb" style="background-image: url(${project.img});"></div>
-          <article>
-            <h1>${project.name}</h1>
-            <span>${project.desc}</span>
-          </article>
-        </a>
-      `;
-        if (project.large) {
-            div.classList.add("large-item");
-        }
-        projectContainer.appendChild(div);
-    });
+function getUrlParam(paramName) {
+    const urlSearchParams = new URLSearchParams(window.location.search);
+    return urlSearchParams.get(paramName);
 }
 
-var projects = [
-    {
-        "name": "OS-Detect.js",
-        "large": false,
-        "img": "https://opengraph.githubassets.com/e347985f5ca95edc3e89e9e77c9c663dbc6ca7f7c1704d5126d475acf9e8d1f4/oxmc/OS-Detect.js",
-        "link": "./project.html?id=osd",
-        "desc": "A JavaScript function to help display what OS is accessing the page."
-    },
-    {
-        "name": "Paypal Donate Button",
-        "large": false,
-        "img": "https://opengraph.githubassets.com/710cf871c217a2caf83607a8c8e1f5d1fcd98533282e8985be93383ec1766750/oxmc/paypaldonatebutton",
-        "link": "./project.html?id=ppdb",
-        "desc": "A javascript function to create custom donation buttons for pay-pal."
-    },
-    {
-        "name": "Card List",
-        "large": false,
-        "img": "https://opengraph.githubassets.com/4127890892edcbaac2c86309d434cd87b807b7afef07df22ed7427f877e59129/oxmc/cardlist",
-        "link": "./project.html?id=crdlst",
-        "desc": "A javascript function to list cards on websites."
-    }
-];
+function redirect(url) {
+    window.location.replace(url);
+}
 
-createProjectCard(projects);
+var redirecturl;
+
+/* Get redirect id */
+const ProjectID = getUrlParam('id') || "noid";
+
+/* Get elements */
+const RedirectElm = document.getElementById("ProjectName");
+
+switch (ProjectID) {
+    case "osd":
+        RedirectElm.innerText = "Redirecting to OS-Detect";
+        redirecturl = "https://github.com/oxmc/os-detect.js";
+        break;
+
+    case "crdlst":
+        RedirectElm.innerText = "Redirecting to Cardlist";
+        redirecturl = "https://github.com/oxmc/cardlist";
+        break;
+
+    case "ppdb":
+        RedirectElm.innerText = "Redirecting to Paypal Donate Button";
+        redirecturl = "https://github.com/oxmc/paypaldonatebutton";
+        break;
+    
+    case "bwrlgcss":
+        RedirectElm.innerText = "Redirecting to Browser Logogs CSS";
+        redirecturl = "https://github.com/oxmc/browser-logos-css";
+        break;
+
+    default:
+    case "noid":
+        redirecturl = "https://oxmc.is-a.dev/?ref=invalid_proj_redirect";
+        break;
+}
+
+/* Wait then redirect */
+setTimeout(() => {
+    try {
+      redirect(redirecturl);
+    } catch (error) {
+        alert("Unable to redirect to:", redirecturl);
+    }
+}, 2000);

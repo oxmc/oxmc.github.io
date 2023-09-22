@@ -1,47 +1,53 @@
-function getUrlParam(paramName) {
-    const urlSearchParams = new URLSearchParams(window.location.search);
-    return urlSearchParams.get(paramName);
+function createProjectCard(data) {
+    const projectContainer = document.getElementById("projects");
+
+    data.forEach(project => {
+        const div = document.createElement("div");
+        div.innerHTML = `
+        <a href="${project.link}" class="card">
+          <div class="thumb" style="background-image: url(${project.img});"></div>
+          <article>
+            <h1>${project.name}</h1>
+            <span>${project.desc}</span>
+          </article>
+        </a>
+      `;
+        if (project.large) {
+            div.classList.add("large-item");
+        }
+        projectContainer.appendChild(div);
+    });
 }
 
-function redirect(url) {
-    window.location.replace(url);
-}
-
-var redirecturl;
-
-/* Get redirect id */
-const ProjectID = getUrlParam('id') || "noid";
-
-/* Get elements */
-const RedirectElm = document.getElementById("ProjectName");
-
-switch (ProjectID) {
-    case "osd":
-        RedirectElm.innerText = "Redirecting to OS-Detect";
-        redirecturl = "https://github.com/oxmc/os-detect.js";
-        break;
-
-    case "crdlst":
-        RedirectElm.innerText = "Redirecting to Cardlist";
-        redirecturl = "https://github.com/oxmc/cardlist";
-        break;
-
-    case "ppdb":
-        RedirectElm.innerText = "Redirecting to Paypal Donate Button";
-        redirecturl = "https://github.com/oxmc/paypaldonatebutton";
-        break;
-
-    default:
-    case "noid":
-        redirecturl = "https://oxmc.is-a.dev/?ref=invalid_proj_redirect";
-        break;
-}
-
-/* Wait then redirect */
-setTimeout(() => {
-    try {
-      redirect(redirecturl);
-    } catch (error) {
-        alert("Unable to redirect to:", redirecturl);
+var projects = [
+    {
+        "name": "OS-Detect.js",
+        "large": false,
+        "img": "./assets/img/projects/osd.png",
+        "link": "./project.html?id=osd",
+        "desc": "A JavaScript function to help display what OS is accessing the page."
+    },
+    {
+        "name": "Paypal Donate Button",
+        "large": false,
+        "img": "./assets/img/projects/ppdb.png",
+        "link": "./project.html?id=ppdb",
+        "desc": "A javascript function to create custom donation buttons for pay-pal."
+    },
+    {
+        "name": "Card List",
+        "large": false,
+        "img": "./assets/img/projects/crdlst.png",
+        "link": "./project.html?id=crdlst",
+        "desc": "A javascript function to list cards on websites."
+    },
+    {
+        "name": "Browser Logos CSS ",
+        "large": false,
+        "img": "./assets/img/projects/bwrlgcss.png",
+        "link": "./project.html?id=bwrlgcss",
+        "desc": "A css icon library that adds webbrowser icons."
     }
-}, 2000);
+];
+
+createProjectCard(projects);
