@@ -29,6 +29,11 @@
     animation: spin 1s linear infinite;
 }
 
+.spinner.redirect {
+    border: 5px solid var(--main-bg-color);
+    border-top: 5px solid var(--main-color-offset-seccondary-active);
+}
+
 .loader.hidden {
     animation: fadeOut 1s;
     animation-fill-mode: forwards;

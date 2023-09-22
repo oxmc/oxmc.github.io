@@ -1,4 +1,11 @@
-.status {
+:root {
+  --status-offline: #747f8d;
+  --status-online: #3ba55d;
+  --status-idle: #faa81a;
+  --status-dnd: #ed4245;
+}
+
+.status.icon {
   content: "";
   height: 0.7rem;
   width: 0.7rem;
@@ -7,17 +14,29 @@
 }
 
 .status.offline {
-  background-color: #747f8d;
+  color: var(--status-offline);
+}
+.status.bg.offline {
+  background-color: var(--status-offline);
 }
 
 .status.online {
-  background-color: #3ba55d;
+  color: var(--status-online);
 }
-
-.status.dnd {
-  background-color: #ed4245;
+.status.bg.online {
+  background-color: var(--status-online);
 }
 
 .status.idle {
-  background-color: #faa81a;
+  color: var(--status-idle);
+}
+.status.bg.idle {
+  background-color: var(--status-idle);
+}
+
+.status.dnd {
+  color: var(--status-dnd);
+}
+.status.bg.dnd {
+  background-color: var(--status-dnd);
 }

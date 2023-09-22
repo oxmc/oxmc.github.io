@@ -5,12 +5,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="manifest" href="./assets/site.webmanifest">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="./assets/css/landing.css">
   <link rel="stylesheet" href="./assets/css/status.css">
+  <link rel="stylesheet" href="./assets/css/discord_profile.css">
+  <link rel="stylesheet" href="./assets/css/izitoast.min.css">
   <meta name="msapplication-TileColor" content="#b891c7">
   <meta name="theme-color" content="#b891c7">
-  <meta name="twitter:card" content="./assets/oxmc.jpeg">
+  <meta name="twitter:card" content="./assets/img/placeholder_pfp.png">
   <meta name="twitter:site" content="https://oxmc.is-a.dev">
   <meta name="twitter:creator" content="oxmc7769_femboy">
   <meta name="twitter:title" content="oxmc's Website!">
@@ -35,6 +39,9 @@
         <li class="nav-item">
           <a href="./contact.html" class="nav-link nav-transition">Contact</a>
         </li>
+        <li class="nav-item">
+          <a href="./projects.html" class="nav-link nav-transition">Projects</a>
+        </li>
       </ul>
       <div class="hamburger">
         <span class="bar"></span>
@@ -44,12 +51,12 @@
     </nav>
   </header>
   <div class="main">
-    <div class="user-info">
+    <div class="user-info" id="userinfo">
       <img class="main_pfp" src="./assets/img/placeholder_pfp.png" alt="My Profile Picture" id="pfp">
       <div class="main_pfp-status">
         <p id="Discord_Status_Text">Currently Offline</p>
         <div class="status-dot-wrapper">
-          <div id="Discord_Status" class="status offline" title="My Discord Status"></div>
+          <div id="Discord_Status" class="status icon offline" title="My Discord Status"></div>
         </div>
       </div>
     </div>
@@ -58,11 +65,16 @@
       <h2>This site is a work in progress, please excuse any bugs!</h2>
     </div>
   </div>
-  <div class="footer">
-    <h2>This site was designed by: <a href="https://fissionfeline.github.io/FissionFeline/">Furious Feline</a>! </h2>
-  </div>
+  <footer class="footer">
+    <h2 id="copyright">&copy; Copyright <a href="https://fissionfeline.github.io/FissionFeline/">Furious Feline</a> and
+      oxmc</h2>
+    <script src="./assets/js/copyright.js"></script>
+  </footer>
 </body>
+<script src="./assets/js/jquery-3.3.1.min.js"></script>
+<script src="./assets/js/izitoast.min.js"></script>
 <script src="./assets/js/discord_status.js"></script>
+<script src="./assets/js/discord_badges.js"></script>
 <script src="./assets/js/discord_info.js"></script>
 <script src="./assets/js/nav_bar_control.js"></script>
 
