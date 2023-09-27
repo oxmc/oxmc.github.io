@@ -4,6 +4,7 @@
     --main-bg-color: #1a1a1a;
     --main-bg-offset-color: #171616;
     --main-bg-offset-color-2: #242323;
+    --main-bg-offset-color-3: #2e2d2d;
     --main-font: "Nunito", sans-serif;
     --main-font-cursive: "Pacifico", cursive;
     --main-color-white: #fafafa;
@@ -84,6 +85,7 @@ a:hover::before {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 30;
 }
 
 .nav-item {
@@ -270,6 +272,7 @@ progress[value]::-ms-fill {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-color: var(--main-bg-offset-color-3);
 }
 
 .card h1 {
