@@ -16,13 +16,13 @@ function createProjectCard(data) {
             div.classList.add("large-item");
         }
         div2.innerHTML = `<div id="${project.id}-modal" class="modal">
+        <span class="dl"><button class="btn" id="${project.id}-modal-dl"><i class="fa fa-download"></i> Download</button></span>
         <span class="close" id="${project.id}-modal-close">&times;</span>
         <img class="modal-content" id="${project.id}-modal-img">
-        <div id="caption"></div>
       </div>`;
         div.appendChild(div2)
         projectContainer.appendChild(div);
-        setupModal(`${project.id}`, `${project.id}`, true);
+        setupModal(`${project.id}`, `${project.id}`);
     });
 }
 
