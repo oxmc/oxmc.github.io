@@ -24,28 +24,28 @@ var projects = [
         "name": "OS-Detect.js",
         "large": false,
         "img": "./assets/img/projects/osd.png",
-        "link": "./project.html?id=osd",
+        "link": "./link.html?id=osd",
         "desc": "A JavaScript function to help display what OS is accessing the page."
     },
     {
         "name": "Paypal Donate Button",
         "large": false,
         "img": "./assets/img/projects/ppdb.png",
-        "link": "./project.html?id=ppdb",
+        "link": "./link.html?id=ppdb",
         "desc": "A javascript function to create custom donation buttons for pay-pal."
     },
     {
         "name": "Card List",
         "large": false,
         "img": "./assets/img/projects/crdlst.png",
-        "link": "./project.html?id=crdlst",
+        "link": "./link.html?id=crdlst",
         "desc": "A javascript function to list cards on websites."
     },
     {
         "name": "Browser Logos CSS ",
         "large": false,
         "img": "./assets/img/projects/bwrlgcss.png",
-        "link": "./project.html?id=bwrlgcss",
+        "link": "./link.html?id=bwrlgcss",
         "desc": "A css icon library that adds webbrowser icons."
     }
 ];
