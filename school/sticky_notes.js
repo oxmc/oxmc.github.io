@@ -30,64 +30,92 @@ var projects = [
     {
         "name": "Purple Guy",
         "large": false,
-        "img": "./img/IMG_2785.JPEG",
+        "img": "./img/IMG_2785.jpg",
         "id": "sticky_note_1",
         "desc": ""
     },
     {
         "name": "Turn Back",
         "large": false,
-        "img": "./img/IMG_2786.JPEG",
+        "img": "./img/IMG_2786.jpg",
         "id": "sticky_note_2",
         "desc": ""
     },
     {
         "name": "Pen No Work",
         "large": false,
-        "img": "./img/IMG_2787.JPEG",
+        "img": "./img/IMG_2787.jpg",
         "id": "sticky_note_3",
         "desc": ""
     },
     {
         "name": "Happy Scribble",
         "large": false,
-        "img": "./img/IMG_2788.JPEG",
+        "img": "./img/IMG_2788.jpg",
         "id": "sticky_note_4",
         "desc": ""
     },
     {
         "name": "Yooo!",
         "large": false,
-        "img": "./img/IMG_2789.JPEG",
+        "img": "./img/IMG_2789.jpg",
         "id": "sticky_note_5",
         "desc": ""
     },
     {
         "name": "How Many?",
         "large": false,
-        "img": "./img/IMG_2790.JPEG",
+        "img": "./img/IMG_2790.jpg",
         "id": "sticky_note_6",
         "desc": ""
     },
     {
         "name": "Nothing Man",
         "large": false,
-        "img": "./img/IMG_2791.JPEG",
+        "img": "./img/IMG_2791.jpg",
         "id": "sticky_note_7",
         "desc": ""
     },
     {
         "name": "Where Iggy?",
         "large": false,
-        "img": "./img/IMG_2838.JPEG",
+        "img": "./img/IMG_2838.jpg",
         "id": "sticky_note_8",
         "desc": ""
     },
     {
         "name": "R.I.P Sticky Notes",
         "large": false,
-        "img": "./img/IMG_2839.JPEG",
+        "img": "./img/IMG_2839.jpg",
         "id": "sticky_note_9",
+        "desc": ""
+    },
+    {
+        "name": "Super",
+        "large": false,
+        "img": "./img/IMG_2995.jpg",
+        "id": "sticky_note_10",
+        "desc": ""
+    },
+    {
+        "name": "Human Centipede",
+        "large": false,
+        "img": "./img/IMG_3002.jpg",
+        "id": "sticky_note_11",
+        "desc": ""
+    },
+    {
+        "name": "Hell Pt.1",
+        "large": false,
+        "img": "./img/IMG_3003.jpg",
+        "id": "sticky_note_12",
+        "desc": ""
+    },
+    {
+        "name": "Hell Pt.2",
+        "large": false,
+        "img": "./img/IMG_2996.jpg",
+        "id": "sticky_note_13",
         "desc": ""
     }
 ];
