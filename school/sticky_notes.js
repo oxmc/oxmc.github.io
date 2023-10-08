@@ -26,7 +26,7 @@ function createProjectCard(data) {
     });
 }
 
-var projects = [
+var StickyNotes = [
     {
         "name": "Purple Guy",
         "large": false,
@@ -120,4 +120,4 @@ var projects = [
     }
 ];
 
-createProjectCard(projects);
+createProjectCard(StickyNotes);

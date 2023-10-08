@@ -1,0 +1,8 @@
+{
+    "name": "oxmc's personal website",
+    "description": "oxmc's personal website",
+    "start_url": "/",
+    "lang": "en-US",
+    "theme_color": "#b891c7",
+    "display": "standalone"
+}

@@ -34,7 +34,8 @@
     border-top: 5px solid var(--main-color-offset-seccondary-active);
 }
 
-.loader.hidden {
+.loader.hidden,
+.loader .spinner-container .spinner.hidden {
     animation: fadeOut 1s;
     animation-fill-mode: forwards;
 }
