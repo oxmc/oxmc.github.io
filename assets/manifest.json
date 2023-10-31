@@ -1,7 +1,9 @@
 {
     "name": "oxmc's personal website",
+    "short_name": "oxmc's website",
     "description": "oxmc's personal website",
-    "start_url": "/",
+    "start_url": "./",
+    "scope": "./",
     "lang": "en-US",
     "theme_color": "#b891c7",
     "display": "standalone"
