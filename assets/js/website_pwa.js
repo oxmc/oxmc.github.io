@@ -15,7 +15,9 @@ window.addEventListener('beforeinstallprompt', (event) => {
     console.log("install event fired");
 
     // Prevent the default installation prompt
-    //event.preventDefault();
+    event.preventDefault();
+
+    event.prompt();
 
     // Store the event for later use
     //window.installPromptEvent = event;

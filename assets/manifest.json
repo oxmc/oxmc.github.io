@@ -6,5 +6,19 @@
     "scope": "./",
     "lang": "en-US",
     "theme_color": "#b891c7",
-    "display": "standalone"
+    "display": "standalone",
+    "orientation": "portrait",
+    "background_color": "#bf93cf",
+    "icons": [
+        {
+            "src": "assets/img/placeholder_pfp_512.jpeg",
+            "sizes": "512x512",
+            "type": "image/jpg"
+        },
+        {
+            "src": "assets/img/happy_ox.jpeg",
+            "sizes": "1024x1024",
+            "type": "image/jpg"
+        }
+    ]
 }
