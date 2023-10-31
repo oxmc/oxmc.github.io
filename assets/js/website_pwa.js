@@ -11,12 +11,19 @@ if ('serviceWorker' in navigator && 'PushManager' in window) {
         });
 }
 
-let firstTime;
+let deferredPrompt, firstTime;
 firstTime = true;
+
 window.addEventListener('beforeinstallprompt', (event) => {
     // Prevent the default installation prompt
     event.preventDefault();
 
+    deferredPrompt = event;
+
+    installPWA();
+});
+
+function installPWA() {
     if (firstTime === true) {
         iziToast.question({
             timeout: 10000,
@@ -29,15 +36,25 @@ window.addEventListener('beforeinstallprompt', (event) => {
             message: 'Would you like to install my site as a PWA?',
             position: 'center',
             buttons: [
-                ['<button style="float: right !important;"><b>YES</b></button>', function (instance, toast) {
+                ['<button><b>YES</b></button>', async function (instance, toast) {
                     instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
                     firstTime = false;
-                    event.prompt();
+                    deferredPrompt.prompt();
+                    const { outcome } = await deferredPrompt.userChoice;
+                    // The deferredPrompt can only be used once.
+                    deferredPrompt = null;
+                    // Act on the user's choice
+                    if (outcome === 'accepted') {
+                        console.log('User accepted the install prompt.');
+                    } else if (outcome === 'dismissed') {
+                        console.log('User dismissed the install prompt');
+                    }
                 }, true],
-                ['<button style="float: right !important;">NO</button>', function (instance, toast) {
+                ['<button>NO</button>', function (instance, toast) {
+                    firstTime = false;
                     instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
                 }],
             ]
         });
     }
-});
+}
