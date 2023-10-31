@@ -1,27 +1,14 @@
-if ('serviceWorker' in navigator && 'PushManager' in window) {
-    // Check if service workers and Push API are supported in the browser
-    navigator.serviceWorker.register('https://oxmc.is-a.dev/assets/js/install_sw.js')
-        .then(function (registration) {
-            // Service worker registration successful
-            console.log('Service Worker registered with scope:', registration.scope);
-        })
-        .catch(function (error) {
-            // Service worker registration failed
-            console.error('Service Worker registration failed:', error);
-        });
+// Function to check if 30 days have passed since the last execution
+function hasThirtyDaysPassed(lastExecutionTimestamp) {
+    if (!lastExecutionTimestamp) {
+        return true; // If there's no previous timestamp, it's the first run
+    }
+
+    const thirtyDaysInMilliseconds = 30 * 24 * 60 * 60 * 1000;
+    const currentTime = new Date().getTime();
+
+    return currentTime - lastExecutionTimestamp >= thirtyDaysInMilliseconds;
 }
-
-let deferredPrompt, firstTime;
-firstTime = true;
-
-window.addEventListener('beforeinstallprompt', (event) => {
-    // Prevent the default installation prompt
-    event.preventDefault();
-
-    deferredPrompt = event;
-
-    installPWA();
-});
 
 function installPWA() {
     if (firstTime === true) {
@@ -58,3 +45,33 @@ function installPWA() {
         });
     }
 }
+
+if ('serviceWorker' in navigator && 'PushManager' in window) {
+    // Check if service workers and Push API are supported in the browser
+    navigator.serviceWorker.register('https://oxmc.is-a.dev/assets/js/install_sw.js')
+        .then(function (registration) {
+            // Service worker registration successful
+            console.log('Service Worker registered with scope:', registration.scope);
+        })
+        .catch(function (error) {
+            // Service worker registration failed
+            console.error('Service Worker registration failed:', error);
+        });
+}
+
+let deferredPrompt, firstTime;
+firstTime = true;
+
+// Initialize or retrieve the last execution timestamp from localStorage
+const lastExecutionTimestamp = parseInt(localStorage.getItem('lastExecutionTimestamp'), 10);
+
+window.addEventListener('beforeinstallprompt', (event) => {
+    // Prevent the default installation prompt
+    event.preventDefault();
+    deferredPrompt = event;
+    if (hasThirtyDaysPassed(lastExecutionTimestamp)) {
+        installPWA();
+        // Update the last execution timestamp in localStorage
+        localStorage.setItem('lastExecutionTimestamp', new Date().getTime().toString());
+    }
+});
