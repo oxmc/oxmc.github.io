@@ -12,24 +12,27 @@ if ('serviceWorker' in navigator && 'PushManager' in window) {
 }
 
 window.addEventListener('beforeinstallprompt', (event) => {
-    console.log("install event fired");
-
     // Prevent the default installation prompt
-    //event.preventDefault();
+    event.preventDefault();
 
-    //event.prompt();
-
-    // Store the event for later use
-    //window.installPromptEvent = event;
-
-    //window.addEventListener('inst', () => {
-    //    event.prompt();
-    //    event.userChoice
-    //        .then((choiceResult) => {
-    //            if (choiceResult.outcome === 'accepted') {
-    //                console.log('User accepted the installation prompt');
-    //            }
-    //            window.installPromptEvent = null; // Reset the event
-    //        });
-    //});
+    iziToast.question({
+        timeout: 10000,
+        close: false,
+        overlay: true,
+        displayMode: 'once',
+        layout: 2,
+        id: 'pwa-question',
+        title: 'Install site as PWA',
+        message: 'Would you like to install my site as a PWA?',
+        position: 'center',
+        buttons: [
+            ['<button style="float: right !important;"><b>YES</b></button>', function (instance, toast) {
+                instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                event.prompt();
+            }, true],
+            ['<button style="float: right !important;">NO</button>', function (instance, toast) {
+                instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+            }],
+        ]
+    });
 });
