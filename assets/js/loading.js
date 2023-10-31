@@ -2,6 +2,9 @@ window.addEventListener("load", function () {
     setTimeout(() => {
         document.querySelector(".loader").className += " hidden";
         if ($("body").data().showwelcome == true) {
+            if (this.document.getElementById("discord-status-fetch-message")) {
+                this.document.getElementById("discord-status-fetch-message").style.display = "none";
+            }
             iziToast.show({
                 id: 'welcome-message',
                 theme: 'dark',

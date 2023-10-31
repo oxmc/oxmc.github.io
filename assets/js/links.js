@@ -30,7 +30,7 @@ switch (ProjectID) {
         RedirectElm.innerText = "Redirecting to Paypal Donate Button";
         redirecturl = "https://github.com/oxmc/paypaldonatebutton";
         break;
-    
+
     case "bwrlgcss":
         RedirectElm.innerText = "Redirecting to Browser Logogs CSS";
         redirecturl = "https://github.com/oxmc/browser-logos-css";
@@ -45,7 +45,7 @@ switch (ProjectID) {
 /* Wait then redirect */
 setTimeout(() => {
     try {
-      redirect(redirecturl);
+        redirect(redirecturl);
     } catch (error) {
         alert("Unable to redirect to:", redirecturl);
     }
