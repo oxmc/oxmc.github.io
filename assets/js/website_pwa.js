@@ -1,6 +1,6 @@
 if ('serviceWorker' in navigator && 'PushManager' in window) {
     // Check if service workers and Push API are supported in the browser
-    navigator.serviceWorker.register('http://localhost:8888/uploads/js/install_sw.js')
+    navigator.serviceWorker.register('https://oxmc.is-a.dev/assets/js/install_sw.js')
         .then(function (registration) {
             // Service worker registration successful
             console.log('Service Worker registered with scope:', registration.scope);
