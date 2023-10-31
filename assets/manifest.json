@@ -14,7 +14,7 @@
             "src": "assets/img/pwa_192x192.png",
             "sizes": "192x192",
             "type": "image/png"
-        },,
+        },
         {
             "src": "assets/img/pwa_512x512.png",
             "sizes": "512x512",
