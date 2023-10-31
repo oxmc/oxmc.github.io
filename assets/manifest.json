@@ -11,17 +11,17 @@
     "background_color": "#bf93cf",
     "icons": [
         {
-            "src": "assets/img/pwa_192x192.png",
+            "src": "img/pwa_192x192.png",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "assets/img/pwa_512x512.png",
+            "src": "img/pwa_512x512.png",
             "sizes": "512x512",
             "type": "image/png"
         },
         {
-            "src": "assets/img/happy_ox.jpeg",
+            "src": "img/happy_ox.jpeg",
             "sizes": "1024x1024",
             "type": "image/jpg"
         }
