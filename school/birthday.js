@@ -8,16 +8,22 @@ const defaults = {
 
 var birthdays = [
     {
-        "name": "Person 1",
+        "name": "Savannah",
         "img": "https://www.svgrepo.com/show/106408/birthday-cake.svg",
         "id": "bday_1",
-        "desc": "Birthday mo/d"
+        "desc": "Birthday 10/29"
     },
     {
-        "name": "Person 2",
+        "name": "Tye",
         "img": "https://www.svgrepo.com/show/106408/birthday-cake.svg",
         "id": "bday_2",
-        "desc": "Birthday mo/d"
+        "desc": "Birthday 10/24"
+    },
+    {
+        "name": "Matthew",
+        "img": "https://www.svgrepo.com/show/106408/birthday-cake.svg",
+        "id": "bday_3",
+        "desc": "Birthday 10/25"
     }
 ];
 
@@ -30,6 +36,20 @@ const message = document.getElementById("message");
 const cake = document.querySelector("div.cake");
 
 /* Functions */
+function runAtSpecificTime(targetHour, targetMinute, callback) {
+    const now = new Date();
+    const targetTime = new Date(now.getFullYear(), now.getMonth(), now.getDate(), targetHour, targetMinute, 0);
+    const timeDifference = targetTime - now;
+
+    if (timeDifference <= 0) {
+        // The target time has already passed, so execute the callback immediately.
+        callback();
+    } else {
+        // Schedule the callback to run after the time difference has elapsed.
+        setTimeout(callback, timeDifference);
+    }
+}
+
 function fire(particleRatio, opts) {
     confetti(
         Object.assign({}, defaults, opts, {
@@ -194,3 +214,8 @@ function birthday() {
         }, 2000);
     }, 5000);
 };
+
+runAtSpecificTime(14, 46, () => {
+    console.log("The time has come!");
+    birthday();
+});
