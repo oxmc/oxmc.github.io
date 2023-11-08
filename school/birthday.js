@@ -36,10 +36,10 @@ const message = document.getElementById("message");
 const cake = document.querySelector("div.cake");
 
 /* Functions */
-function runAtSpecificTime(targetHour, targetMinute, callback) {
+function runAtSpecificDateTime(targetYear, targetMonth, targetDay, targetHour, targetMinute, callback) {
     const now = new Date();
-    const targetTime = new Date(now.getFullYear(), now.getMonth(), now.getDate(), targetHour, targetMinute, 0);
-    const timeDifference = targetTime - now;
+    const targetDate = new Date(targetYear, targetMonth - 1, targetDay, targetHour, targetMinute, 0); // Months are 0-indexed
+    const timeDifference = targetDate - now;
 
     if (timeDifference <= 0) {
         // The target time has already passed, so execute the callback immediately.
@@ -215,7 +215,8 @@ function birthday() {
     }, 5000);
 };
 
-runAtSpecificTime(14, 46, () => {
+//run on November 10, 2023, at 2:45 PM:
+runAtSpecificDateTime(2023, 11, 10, 14, 45, () => {
     console.log("The time has come!");
     birthday();
 });
