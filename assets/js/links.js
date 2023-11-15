@@ -41,6 +41,11 @@ switch (ProjectID) {
         redirecturl = "https://protoshock.github.io?ref=oxmc";
         break;
 
+    case "discord":
+        RedirectElm.innerText = "Redirecting to oxmc's discord server";
+        redirecturl = "https://discord.gg/2cbnRA9Bph";
+        break;
+
     default:
     case "noid":
         redirecturl = "https://oxmc.is-a.dev/?ref=invalid_proj_redirect";
