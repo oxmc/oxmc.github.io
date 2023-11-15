@@ -36,6 +36,11 @@ switch (ProjectID) {
         redirecturl = "https://github.com/oxmc/browser-logos-css";
         break;
 
+    case "pshock":
+        RedirectElm.innerText = "Redirecting to Protoshock";
+        redirecturl = "https://protoshock.github.io?ref=oxmc";
+        break;
+
     default:
     case "noid":
         redirecturl = "https://oxmc.is-a.dev/?ref=invalid_proj_redirect";

@@ -47,6 +47,13 @@ var projects = [
         "img": "./assets/img/projects/bwrlgcss.png",
         "link": "./link.html?id=bwrlgcss",
         "desc": "A css icon library that adds webbrowser icons."
+    },
+    {
+        "name": "Protoshock",
+        "large": false,
+        "img": "https://protoshock.github.io/assets/img/Protoshock_menu.png",
+        "link": "./link.html?id=pshock",
+        "desc": "A game me and my friend are working on."
     }
 ];
 
