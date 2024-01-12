@@ -6,26 +6,25 @@ const defaults = {
     origin: { y: 0.7 },
 };
 
-var birthdays = [
-    {
-        "name": "Savannah",
-        "img": "https://www.svgrepo.com/show/106408/birthday-cake.svg",
-        "id": "bday_1",
-        "desc": "Birthday 10/29"
-    },
-    {
-        "name": "Tye",
-        "img": "https://www.svgrepo.com/show/106408/birthday-cake.svg",
-        "id": "bday_2",
-        "desc": "Birthday 10/24"
-    },
-    {
-        "name": "Matthew",
-        "img": "https://www.svgrepo.com/show/106408/birthday-cake.svg",
-        "id": "bday_3",
-        "desc": "Birthday 10/25"
-    }
-];
+function getUrlParam(paramName) {
+    const urlSearchParams = new URLSearchParams(window.location.search);
+    return urlSearchParams.get(paramName);
+}
+
+var birthdays = [];
+
+fetch(`https://oxmc-php.000webhostapp.com/school/birthdays.php?class=${getUrlParam('class')}`)
+    .then(response => response.json())
+    .then(data => {
+        // Assuming the response contains an array of birthdays
+        birthdays = data.map(birthday => ({
+            name: birthday.name,
+            img: birthday.img,
+            id: birthday.id,
+            desc: `Birthday ${birthday.desc}`
+        }));
+    })
+    .catch(error => console.error('Error fetching birthdays:', error));
 
 /* Elements */
 const cardContainer = document.getElementById("bdaycards");
