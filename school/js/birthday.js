@@ -23,7 +23,7 @@ if (classp) {
         name: birthday.name,
         img: birthday.img,
         id: birthday.id,
-        desc: `Birthday ${birthday.desc}`
+        desc: `Birthday ${birthday.date}`
       }));
     })
     .catch(error => console.error('Error fetching birthdays:', error));
