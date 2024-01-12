@@ -11,6 +11,9 @@ function getUrlParam(paramName) {
   return urlSearchParams.get(paramName);
 };
 
+var example_birthday = [
+  { "name": "Error", "img": "https:\/\/www.svgrepo.com\/show\/106408\/birthday-cake.svg", "id": "bday_1", "desc": "Failed to get birthdays, it's up to you teacher!" }
+];
 var birthdays = [];
 var classp = getUrlParam('class');
 
@@ -26,11 +29,12 @@ if (classp) {
         desc: `Birthday ${birthday.date}`
       }));
     })
-    .catch(error => console.error('Error fetching birthdays:', error));
+    .catch(error => {
+      console.error('Error fetching birthdays:', error);
+      birthdays = example_birthday;
+    });
 } else {
-  birthdays = [
-    { "name": "Error", "img": "https:\/\/www.svgrepo.com\/show\/106408\/birthday-cake.svg", "id": "bday_1", "desc": "Failed to get birthdays, it's up to you teacher!" }
-  ]
+  birthdays = example_birthday;
 }
 
 /* Elements */
